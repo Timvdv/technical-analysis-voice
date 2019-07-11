@@ -1,0 +1,10 @@
+
+Todo:
+  ☐ Refactor project because it's the start of the (new) boilerplate
+  ☐ Make unit tests work with the .yml files
+  ☐ Setup voice get price calls
+  ☐ Change API to have descriptions of the patterns.
+  ☐ Add explanation, what do the strategies mean.
+    ☐ Loop through strategies
+    ☐ Create a nice message after the loop
+    ☐ Another option: only do the pattern_prediction with description of the pattern.

@@ -1,0 +1,6 @@
+{
+  "dialogFlowDirectory": "../FactsAboutGoogle",
+  "expressModule": "index.js",
+  "expressPort": 3000,
+  "platform": "google"
+}

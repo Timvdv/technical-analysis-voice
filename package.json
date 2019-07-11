@@ -1,0 +1,41 @@
+{
+  "name": "voice-crypto-analyser",
+  "version": "1.0.0",
+  "description": "Get the latest crypto analytics just by using your voice.",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/index.ts",
+    "start": "npm run dev",
+    "prod": "npm run build && npm run start",
+    "proxy": "bst proxy http 3000",
+    "all": "npm run start && ttab -t 'npm run proxy'",
+    "test": "mocha --ui tdd -r ts-node/register tests/**/*.test.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "contributors": [
+    "Tim van de Vathorst <tim@vandevathorst.nl> (http://timvandevathorst.nl/)"
+  ],
+  "dependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^4.17.0",
+    "actions-on-google": "^2.7.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "isomorphic-fetch": "^2.2.1",
+    "nodemon": "^1.19.1",
+    "ssml-builder": "^0.4.3",
+    "tsmonad": "^0.8.0",
+    "typescript": "^3.5.2",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "ts-node": "^8.3.0"
+  }
+}
