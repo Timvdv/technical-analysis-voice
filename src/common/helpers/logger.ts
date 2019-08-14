@@ -1,8 +1,6 @@
 import * as path from "path";
 import { createLogger, transports, format } from 'winston';
 
-const PROJECT_ROOT = path.join(__dirname, '..')
-
 const logger = createLogger({
   format: format.combine(
     format.label({ label: path.basename(process.mainModule.filename) }),

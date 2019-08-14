@@ -10,7 +10,7 @@
     "prod": "npm run build && npm run start",
     "proxy": "bst proxy http 3000",
     "all": "npm run start && ttab -t 'npm run proxy'",
-    "test": "mocha --ui tdd -r ts-node/register tests/**/*.test.ts"
+    "test": "mocha --ui tdd -r ts-node/register src/**/*.test.ts"
   },
   "author": "",
   "license": "ISC",
