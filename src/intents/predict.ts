@@ -3,13 +3,13 @@ import { logger } from "../common/helpers/logger";
 
 import { getCoinPrediction } from "../api/analysisApi";
 import { hasApiError } from "../common/helpers/hasApiError";
-import { hasCoinSymbol } from "../common/helpers/hasCoinSymbol";
+import { hasCoinPrediction } from "../common/helpers/hasCoinPrediction";
 import { newResponse } from "../common/helpers/newResponse";
 
 import { getMessage } from "../common/helpers/getMessage";
 import { generalMessages } from "../common/messages/generalMessages";
 import { predictMessages } from "../common/messages/predictMessages";
-
+import { IPredictionResult } from "../common/interfaces/IPredictionResult";
 
 /**
  * When user asks to predict the price of a certain coin
@@ -22,6 +22,7 @@ const predictIntent = async (attributes: IResponseAttributes, responseBuilder: F
   try {
     logger.debug(`Fetching prediction for ${coinSymbol}.`);
     const coinPredictionData: any = await getCoinPrediction(coinSymbol);
+
     logger.debug(`Got prediction data.`);
 
     // Check if there is an error in the API response
@@ -38,14 +39,16 @@ const predictIntent = async (attributes: IResponseAttributes, responseBuilder: F
     }
 
     // When there is no error but also no result.
-    if(!hasCoinSymbol(coinPredictionData, coinPredictionData.symbol)) {
+    if(!hasCoinPrediction(coinPredictionData)) {
       const message = getMessage(predictMessages.noCoinFound);
 
       return newResponse(message, responseBuilder);
     }
 
+    const coinPredictionDataResult: IPredictionResult = coinPredictionData;
+
     // Return the response when everything went okay
-    const message = getMessage(predictMessages.result, { recommendation: coinPredictionData.recommendation });
+    const message = getMessage(predictMessages.result, { recommendation: coinPredictionDataResult.description });
 
     return newResponse(message, responseBuilder);
   } catch(error) {

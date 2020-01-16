@@ -1,10 +1,13 @@
 
 Todo:
-  ☐ Refactor project because it's the start of the (new) boilerplate
   ☐ Make unit tests work with the .yml files
-  ☐ Setup voice get price calls
-  ☐ Change API to have descriptions of the patterns.
+  ☐ Setup voice structure to get price details calls. Like: "What is the price of Bitcoin?"
+  ☐ implement as voice command https://technical-analysis-api.com/api/v1/pattern/hasHeadAndShoulder?apiKey=xxx
   ☐ Add explanation, what do the strategies mean.
     ☐ Loop through strategies
     ☐ Create a nice message after the loop
     ☐ Another option: only do the pattern_prediction with description of the pattern.
+  ☐ Build a way to fetch more information when the user already asked about a coin.
+    ☐ What is the price
+    ☐ Should I buy it
+    ☐ more information, this will tell what patterns it found etc

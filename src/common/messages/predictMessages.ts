@@ -6,8 +6,7 @@ const predictMessages = {
     `,
   },
   result: {
-    text: result => `We analysed the coin thoroughly.
-    Our recommendation: ${result.recommendation} it!`
+    text: result => `I found something! ${result.recommendation}`
   }
 };
 

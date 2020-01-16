@@ -8,11 +8,11 @@
     "dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/index.ts",
     "start": "npm run dev",
     "prod": "npm run build && npm run start",
-    "proxy": "bst proxy http 3000",
-    "all": "npm run start && ttab -t 'npm run proxy'",
+    "proxy": "ngrok http 3000",
+    "all": "ttab -t 'NGROK Proxy' 'npm run proxy' && npm run start",
     "test": "mocha --ui tdd -r ts-node/register src/**/*.test.ts"
   },
-  "author": "",
+  "author": "Tim van de Vathorst",
   "license": "ISC",
   "contributors": [
     "Tim van de Vathorst <tim@vandevathorst.nl> (http://timvandevathorst.nl/)"
@@ -36,6 +36,7 @@
     "@types/mocha": "^5.2.7",
     "chai": "^4.2.0",
     "mocha": "^6.1.4",
+    "ngrok": "^3.2.7",
     "ts-node": "^8.3.0"
   }
 }
