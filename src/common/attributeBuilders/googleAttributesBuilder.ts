@@ -1,4 +1,4 @@
-import { IResponseAttributes } from "../interfaces/IResponseAttributes";
+import { IResponseAttributes } from "common/interfaces/IResponseAttributes";
 
 /**
  * This makes sure the Google attributes are in the same format

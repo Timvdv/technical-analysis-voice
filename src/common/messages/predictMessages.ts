@@ -1,3 +1,5 @@
+import { IPredictionResult } from "common/interfaces/IPredictionResult";
+
 const predictMessages = {
   noCoinFound: {
     text: `
@@ -6,7 +8,7 @@ const predictMessages = {
     `,
   },
   result: {
-    text: result => `I found something! ${result.recommendation}`
+    text: (result: IPredictionResult) => `Got it! ${result.recommendation}`
   }
 };
 

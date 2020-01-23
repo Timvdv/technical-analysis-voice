@@ -1,4 +1,4 @@
-import { IBasicResponse } from "../interfaces/IBasicResponse";
+import { IBasicResponse } from "common/interfaces/IBasicResponse";
 
 /**
  * The Google response builder. This formats the general response

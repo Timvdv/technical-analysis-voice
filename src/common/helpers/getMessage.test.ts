@@ -1,6 +1,6 @@
 import { assert } from "chai";
-import { getMessage } from "./getMessage";
-import { generalMessages } from "../messages/generalMessages";
+import { generalMessages } from "common/messages/generalMessages";
+import { getMessage } from "common/helpers/getMessage";
 
 suite("getMessage() ", () => {
   test("Should get error message", () => {

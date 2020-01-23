@@ -1,7 +1,7 @@
 import { dialogflow } from "actions-on-google";
-import { welcomeIntent } from "../intents/welcome";
-import { predictIntent } from "../intents/predict";
-import { googleResponse } from "../common/helpers/googleResponse";
+import { googleResponse } from "common/helpers/googleResponse";
+import { welcomeIntent } from "intents/welcome";
+import { predictIntent } from "intents/predict";
 
 /**
  * Class for handling Google traffic.

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { GoogleController } from "../controllers/googleController";
+import { GoogleController } from "controllers/googleController";
 
 /**
  * Class for setting up URL routes in the application.

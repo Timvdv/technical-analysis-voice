@@ -1,4 +1,4 @@
-import { IBasicResponse } from "../interfaces/IBasicResponse";
+import { IBasicResponse } from "common/interfaces/IBasicResponse";
 
 /**
  * Model for passing conversation logic result to the responsebuilders.

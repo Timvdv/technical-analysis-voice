@@ -1,5 +1,5 @@
-import { IBasicResponse } from "../interfaces/IBasicResponse";
-import { createBasicResponse } from "../responseStructures/basicResponse";
+import { createBasicResponse } from "common/responseStructures/basicResponse";
+import { IBasicResponse } from "common/interfaces/IBasicResponse";
 
 const newResponse = (message: string, responseBuilder: Function) => {
   const response: IBasicResponse = createBasicResponse(message);

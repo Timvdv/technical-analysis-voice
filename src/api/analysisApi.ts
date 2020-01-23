@@ -1,4 +1,4 @@
-import { IPredictionResult } from "../common/interfaces/IPredictionResult";
+import { IPredictionResult } from "common/interfaces/IPredictionResult";
 
 const config = {
   url: "https://technical-analysis-api.com",

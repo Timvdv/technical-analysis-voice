@@ -1,5 +1,5 @@
-import { googleAttributeBuilder } from "../attributeBuilders/googleAttributesBuilder";
-import { googleResponseBuilder } from "../responseBuilders/googleResponseBuilder";
+import { googleAttributeBuilder } from "common/attributeBuilders/googleAttributesBuilder";
+import { googleResponseBuilder } from "common/responseBuilders/googleResponseBuilder";
 
 /**
  * Each intent gets the arguments & conversation in the same format

@@ -1,15 +1,16 @@
-import { IResponseAttributes } from "../common/interfaces/IResponseAttributes";
-import { logger } from "../common/helpers/logger";
+import { logger } from "common/helpers/logger";
+import { getCoinPrediction } from "api/analysisApi";
+import { hasCoinPrediction } from "common/helpers/hasCoinPrediction";
+import { hasApiError } from "common/helpers/hasApiError";
+import { newResponse } from "common/helpers/newResponse";
 
-import { getCoinPrediction } from "../api/analysisApi";
-import { hasApiError } from "../common/helpers/hasApiError";
-import { hasCoinPrediction } from "../common/helpers/hasCoinPrediction";
-import { newResponse } from "../common/helpers/newResponse";
+import { IResponseAttributes } from "common/interfaces/IResponseAttributes";
+import { IPredictionResult } from "common/interfaces/IPredictionResult";
 
-import { getMessage } from "../common/helpers/getMessage";
-import { generalMessages } from "../common/messages/generalMessages";
-import { predictMessages } from "../common/messages/predictMessages";
-import { IPredictionResult } from "../common/interfaces/IPredictionResult";
+import { getMessage } from "common/helpers/getMessage";
+import { predictMessages } from "common/messages/predictMessages";
+import { generalMessages } from "common/messages/generalMessages";
+
 
 /**
  * When user asks to predict the price of a certain coin
@@ -17,12 +18,12 @@ import { IPredictionResult } from "../common/interfaces/IPredictionResult";
  * @param responseBuilder
  */
 const predictIntent = async (attributes: IResponseAttributes, responseBuilder: Function) => {
+  // Fetch the coin symbol from the question
   const coinSymbol = attributes.parameters.coin.toUpperCase();
 
   try {
     logger.debug(`Fetching prediction for ${coinSymbol}.`);
     const coinPredictionData: any = await getCoinPrediction(coinSymbol);
-
     logger.debug(`Got prediction data.`);
 
     // Check if there is an error in the API response
