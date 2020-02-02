@@ -10,7 +10,7 @@
     "prod": "npm run build && npm run start",
     "proxy": "ngrok http 3000",
     "all": "ttab -t 'NGROK Proxy' 'npm run proxy' && npm run start",
-    "test": "mocha --ui tdd -r ts-node/register src/**/*.test.ts"
+    "test": "NODE_PATH=./src mocha --ui tdd -r ts-node/register src/**/*.test.ts"
   },
   "author": "Tim van de Vathorst",
   "license": "ISC",

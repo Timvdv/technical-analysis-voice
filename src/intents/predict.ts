@@ -11,7 +11,6 @@ import { getMessage } from "common/helpers/getMessage";
 import { predictMessages } from "common/messages/predictMessages";
 import { generalMessages } from "common/messages/generalMessages";
 
-
 /**
  * When user asks to predict the price of a certain coin
  * @param attributes
