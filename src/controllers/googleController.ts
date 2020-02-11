@@ -1,7 +1,6 @@
 import { dialogflow } from "actions-on-google";
 import { googleResponse } from "common/helpers/googleResponse";
 import { welcomeIntent } from "intents/welcome";
-import { predictIntent } from "intents/predict";
 
 /**
  * Class for handling Google traffic.
@@ -25,10 +24,6 @@ export class GoogleController {
   private setupIntentHandlers(): void {
     this.endpoint.intent("Default Welcome Intent", conversation =>
       googleResponse(conversation, welcomeIntent)
-    );
-
-    this.endpoint.intent("Should I buy this coin", conversation =>
-      googleResponse(conversation, predictIntent)
     );
   };
 };
